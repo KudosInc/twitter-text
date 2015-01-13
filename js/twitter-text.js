@@ -103,6 +103,10 @@
   twttr.txt.regexen.non_bmp_code_pairs = /[\uD800-\uDBFF][\uDC00-\uDFFF]/mg;
 
   var nonLatinHashtagChars = [];
+  // Greek
+  addCharsToCharClass(nonLatinHashtagChars, 0x0381, 0x03a9); // Greek
+  addCharsToCharClass(nonLatinHashtagChars, 0x03b1, 0x03c9); // Greek
+  addCharsToCharClass(nonLatinHashtagChars, 0x0386, 0x0390); // Greek
   // Cyrillic
   addCharsToCharClass(nonLatinHashtagChars, 0x0400, 0x04ff); // Cyrillic
   addCharsToCharClass(nonLatinHashtagChars, 0x0500, 0x0527); // Cyrillic Supplement
