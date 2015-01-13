@@ -100,9 +100,9 @@ module Twitter
 
 
     NON_LATIN_HASHTAG_CHARS = [
-      regex_range(0x0381, 0x03a9); # Greek
-      regex_range(0x03b1, 0x03c9); # Greek
-      regex_range(0x0386, 0x0390); # Greek
+      regex_range(0x0381, 0x03a9), # Greek
+      regex_range(0x03b1, 0x03c9), # Greek
+      regex_range(0x0386, 0x0390), # Greek
       # Cyrillic (Russian, Ukrainian, etc.)
       regex_range(0x0400, 0x04ff), # Cyrillic
       regex_range(0x0500, 0x0527), # Cyrillic Supplement
