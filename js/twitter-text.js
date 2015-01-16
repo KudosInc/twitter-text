@@ -224,6 +224,15 @@
   , 'g');
   twttr.txt.regexen.validReply = regexSupplant(/^(?:#{spaces})*#{atSigns}([a-zA-Z0-9_]{1,20})/);
   twttr.txt.regexen.endMentionMatch = regexSupplant(/^(?:#{atSigns}|[#{latinAccentChars}]|:\/\/)/);
+  
+  // overwrite mention to allow for any character set allowed in english, latinAccentChars, or nonLatinHashtagChars - and allow a space in the mentioned name 
+  twttr.txt.regexen.validMentionCharactersKudos = regexSupplant(/a-zA-Z0-9#{latinAccentChars}#{nonLatinHashtagChars}_\'\-/);
+  twttr.txt.regexen.validMentionPrecedingChars = regexSupplant(/(?:^|[^a-zA-Z#{latinAccentChars}#{nonLatinHashtagChars}_!#$%&*@＠]|(?:rt|RT|rT|Rt):?)/);
+  twttr.txt.regexen.validMentionOrList = regexSupplant(
+    '(#{validMentionPrecedingChars})' +  // $1: Preceding characterΑμυ 
+    '(#{atSigns})' +                     // $2: At mark
+    '(([#{validMentionCharactersKudos}]+[ ]+[#{validMentionCharactersKudos}]*)|[#{validMentionCharactersKudos}]*)'             // $3: Screen name
+    , 'g');
 
   // URL related regex collection
   twttr.txt.regexen.validUrlPrecedingChars = regexSupplant(/(?:[^A-Za-z0-9@＠$#＃#{invalid_chars_group}]|^)/);
