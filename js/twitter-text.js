@@ -104,9 +104,8 @@
 
   var nonLatinHashtagChars = [];
   // Greek
-  addCharsToCharClass(nonLatinHashtagChars, 0x0381, 0x03a9); // Greek
-  addCharsToCharClass(nonLatinHashtagChars, 0x03b1, 0x03c9); // Greek
-  addCharsToCharClass(nonLatinHashtagChars, 0x0386, 0x0390); // Greek
+  addCharsToCharClass(nonLatinHashtagChars, 0x0370, 0x03ff); // Greek http://www.unicode.org/charts/PDF/U0370.pdf
+  addCharsToCharClass(nonLatinHashtagChars, 0x1f00, 0x1fff); // Greek Extended http://www.unicode.org/charts/PDF/U1F00.pdf
   // Cyrillic
   addCharsToCharClass(nonLatinHashtagChars, 0x0400, 0x04ff); // Cyrillic
   addCharsToCharClass(nonLatinHashtagChars, 0x0500, 0x0527); // Cyrillic Supplement
